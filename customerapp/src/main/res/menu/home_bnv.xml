@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/bnv_explore"
+        android:title="@string/explore"
+        android:icon="@drawable/ic_home" />
+    <item
+        android:id="@+id/bnv_order"
+        android:title="@string/my_order"
+        android:icon="@drawable/ic_order" />
+    <item
+        android:id="@+id/bnv_inbox"
+        android:title="@string/inbox"
+        android:icon="@drawable/ic_mail" />
+    <item
+        android:id="@+id/bnv_account"
+        android:title="@string/account"
+        android:icon="@drawable/ic_person" />
+</menu>

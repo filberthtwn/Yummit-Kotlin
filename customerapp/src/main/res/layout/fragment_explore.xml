@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="userName"
+            type="String" />
+    </data>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/refresh_explore"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".fragment.main.home.ExploreFragment">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="280dp"
+                android:layout_marginTop="-25dp"
+                android:contentDescription="@string/background"
+                android:scaleType="centerCrop"
+                android:src="@drawable/bg_home" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.google.android.material.appbar.AppBarLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:background="@android:color/transparent"
+                    app:elevation="0dp">
+
+                    <androidx.appcompat.widget.Toolbar
+                        android:id="@+id/tb_home"
+                        android:layout_width="match_parent"
+                        android:layout_height="?attr/actionBarSize"
+                        android:background="@android:color/transparent"
+                        app:menu="@menu/explore_toolbar">
+
+                        <TextView
+                            android:id="@+id/tv_home_search"
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/search_home"
+                            android:drawableStart="@drawable/ic_room"
+                            android:drawablePadding="@dimen/super_small_size"
+                            android:padding="@dimen/quarter_size"
+                            android:text="@string/sector_12_noida"
+                            android:textColor="@android:color/white"
+                            android:textSize="@dimen/text_mediumsmall" />
+                    </androidx.appcompat.widget.Toolbar>
+                </com.google.android.material.appbar.AppBarLayout>
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/double_size"
+                            android:layout_marginTop="@dimen/double_size"
+                            android:text="@{userName}"
+                            tools:text="@string/hungry_john"
+                            android:textColor="@android:color/white"
+                            android:textSize="@dimen/text_giant"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/double_size"
+                            android:layout_marginTop="@dimen/default_size"
+                            android:text="@string/lorem_ipsum"
+                            android:textColor="@android:color/white"
+                            android:textSize="@dimen/text_mediumsmall" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="62dp"
+                            android:background="@drawable/bg_white"
+                            android:padding="@dimen/double_size">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:baselineAligned="false"
+                                android:orientation="horizontal"
+                                android:weightSum="4"
+                                tools:ignore="UselessParent">
+
+                                <LinearLayout
+                                    android:id="@+id/ll_home_delivery"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:orientation="vertical"
+                                    tools:ignore="UseCompoundDrawables">
+
+                                    <ImageView
+                                        android:layout_width="60dp"
+                                        android:layout_height="60dp"
+                                        android:background="@drawable/round"
+                                        android:backgroundTint="@color/colorTertiary"
+                                        android:contentDescription="@string/home_btn"
+                                        android:padding="@dimen/img_padding"
+                                        android:src="@drawable/ic_delivery" />
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="@dimen/quarter_size"
+                                        android:text="@string/delivery"
+                                        android:textAlignment="center"
+                                        android:textColor="@android:color/black"
+                                        android:textSize="@dimen/text_mediumsmall" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/ll_home_pickup"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:orientation="vertical"
+                                    tools:ignore="UseCompoundDrawables">
+
+                                    <ImageView
+                                        android:layout_width="60dp"
+                                        android:layout_height="60dp"
+                                        android:background="@drawable/round"
+                                        android:backgroundTint="@color/colorPrimary"
+                                        android:contentDescription="@string/home_btn"
+                                        android:padding="@dimen/img_padding"
+                                        android:src="@drawable/ic_bag" />
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="@dimen/quarter_size"
+                                        android:text="@string/self_pickup"
+                                        android:textAlignment="center"
+                                        android:textColor="@android:color/black"
+                                        android:textSize="@dimen/text_mediumsmall" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/ll_home_donate"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:orientation="vertical"
+                                    tools:ignore="UseCompoundDrawables">
+
+                                    <ImageView
+                                        android:layout_width="60dp"
+                                        android:layout_height="60dp"
+                                        android:background="@drawable/round"
+                                        android:backgroundTint="@color/colorQuaternary"
+                                        android:contentDescription="@string/home_btn"
+                                        android:padding="@dimen/img_padding"
+                                        android:src="@drawable/ic_food_donation" />
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="@dimen/quarter_size"
+                                        android:text="@string/donate"
+                                        android:textAlignment="center"
+                                        android:textColor="@android:color/black"
+                                        android:textSize="@dimen/text_mediumsmall" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/ll_home_foodmap"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:orientation="vertical"
+                                    tools:ignore="UseCompoundDrawables">
+
+                                    <ImageView
+                                        android:layout_width="60dp"
+                                        android:layout_height="60dp"
+                                        android:background="@drawable/round"
+                                        android:backgroundTint="@color/colorSecondary"
+                                        android:contentDescription="@string/home_btn"
+                                        android:padding="@dimen/img_padding" />
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="@dimen/quarter_size"
+                                        android:text="@string/food_map"
+                                        android:textAlignment="center"
+                                        android:textColor="@android:color/black"
+                                        android:textSize="@dimen/text_mediumsmall" />
+                                </LinearLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/white"
+                            android:paddingStart="@dimen/double_size"
+                            android:paddingEnd="@dimen/double_size">
+
+                            <TextView
+                                android:id="@+id/textView"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="@string/near_me"
+                                android:textColor="@android:color/black"
+                                android:textSize="@dimen/text_medium"
+                                android:textStyle="bold"
+                                app:layout_constraintEnd_toStartOf="@+id/tv_home_nearme_viewall"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/textView4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/quarter_size"
+                                android:text="@string/nearest_restaurant"
+                                android:textSize="@dimen/text_smaller"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+                            <TextView
+                                android:id="@+id/tv_home_nearme_viewall"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/view_all"
+                                android:textColor="@color/colorPrimary"
+                                android:textStyle="bold"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/rv_home_nearme"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/default_size"
+                                android:minHeight="180dp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/textView4"
+                                tools:listitem="@layout/item_resto_v1"
+                                tools:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                                tools:itemCount="4"
+                                tools:spanCount="2"/>
+
+                            <TextView
+                                android:id="@+id/list_nearme_error"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/list_error_message"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="@+id/rv_home_nearme"
+                                app:layout_constraintStart_toStartOf="@+id/rv_home_nearme"
+                                app:layout_constraintTop_toTopOf="@+id/rv_home_nearme" />
+
+                            <ProgressBar
+                                android:id="@+id/pb_list_nearme"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="@+id/rv_home_nearme"
+                                app:layout_constraintStart_toStartOf="@+id/rv_home_nearme"
+                                app:layout_constraintTop_toTopOf="@+id/rv_home_nearme" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </LinearLayout>
+                </ScrollView>
+            </LinearLayout>
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</layout>

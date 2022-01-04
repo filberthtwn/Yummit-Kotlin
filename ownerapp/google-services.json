@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "53827233148",
+    "firebase_url": "https://yummit-android.firebaseio.com",
+    "project_id": "yummit-android",
+    "storage_bucket": "yummit-android.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:53827233148:android:ae470133455ecd57eff0f9",
+        "android_client_info": {
+          "package_name": "com.yummit.customer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "53827233148-kn6kqg8daninv23k0g1q13rf0nmnnsjt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBgGGnzhcugeu90htEyBRxnJeUiz-pknsA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "53827233148-kn6kqg8daninv23k0g1q13rf0nmnnsjt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:53827233148:android:e3fb36b6587d3ac6eff0f9",
+        "android_client_info": {
+          "package_name": "com.yummit.ownerapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "53827233148-kn6kqg8daninv23k0g1q13rf0nmnnsjt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBgGGnzhcugeu90htEyBRxnJeUiz-pknsA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "53827233148-kn6kqg8daninv23k0g1q13rf0nmnnsjt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="resto"
+            type="com.yummit.customer.model.Restaurant" />
+        <variable
+            name="listener"
+            type="com.yummit.customer.helper.RestoClickListener" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="@dimen/default_size"
+        app:cardCornerRadius="@dimen/default_size"
+        app:cardMaxElevation="@dimen/default_size"
+        app:contentPadding="@dimen/default_size"
+        android:onClick="@{listener::onRestoClick}">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/restoId_restov4"
+                android:visibility="gone"
+                android:text="@{String.valueOf(resto.id)}" />
+
+            <ImageView
+                android:id="@+id/img_item_restov4"
+                android:layout_width="@dimen/medium_image_size"
+                android:layout_height="@dimen/medium_image_size"
+                android:contentDescription="@string/background"
+                android:scaleType="centerCrop"
+                android:imageUrl="@{resto.image}"
+                tools:src="@drawable/bg_food_example"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:layout_width="@dimen/medium_image_size"
+                android:layout_height="@dimen/medium_image_size"
+                android:contentDescription="@string/frame"
+                android:scaleType="centerCrop"
+                android:src="@drawable/frame"
+                app:layout_constraintTop_toTopOf="@id/img_item_restov4"
+                app:layout_constraintStart_toStartOf="@id/img_item_restov4"/>
+
+            <TextView
+                android:id="@+id/tv_item_resto_title_v4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/half_size"
+                tools:text="@string/kayana_cafe"
+                android:text="@{resto.name}"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/text_large"
+                app:layout_constraintEnd_toStartOf="@+id/tv_item_resto_countdown_v4"
+                app:layout_constraintStart_toEndOf="@+id/img_item_restov4"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_item_resto_type_v4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/half_size"
+                tools:text="@string/italian_cuisine"
+                android:text="@{resto.type}"
+                android:textSize="@dimen/text_smaller"
+                app:layout_constraintStart_toEndOf="@+id/img_item_restov4"
+                app:layout_constraintTop_toBottomOf="@+id/tv_item_resto_title_v4" />
+
+            <TextView
+                android:id="@+id/tv_item_resto_time_v4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="@string/_30_40_min"
+                android:text="@{resto.time}"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/text_small"
+                android:layout_marginStart="@dimen/half_size"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/img_item_restov4"
+                app:layout_constraintTop_toBottomOf="@+id/tv_item_resto_type_v4" />
+
+            <TextView
+                android:id="@+id/tv_item_resto_score_v4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/half_size"
+                tools:text="@string/_2_5"
+                android:text="@{Double.toString(resto.avg)}"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/text_tiny"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_item_resto_time_v4"
+                app:layout_constraintStart_toEndOf="@+id/tv_item_resto_time_v4"
+                app:layout_constraintTop_toTopOf="@+id/tv_item_resto_time_v4" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:contentDescription="@string/logo"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:src="@drawable/ic_star"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_item_resto_score_v4"
+                app:layout_constraintStart_toEndOf="@+id/tv_item_resto_score_v4"
+                app:layout_constraintTop_toTopOf="@+id/tv_item_resto_score_v4" />
+
+            <TextView
+                android:id="@+id/tv_item_resto_total_v4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="@string/_500"
+                android:text="@{resto.total}"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/text_tiny"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView"
+                app:layout_constraintStart_toEndOf="@+id/imageView"
+                app:layout_constraintTop_toTopOf="@+id/imageView" />
+
+            <TextView
+                android:id="@+id/tv_item_resto_distance_v4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="@string/_2_9_km"
+                android:text="@{resto.distance}"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/text_small"
+                android:layout_marginStart="@dimen/half_size"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_item_resto_time_v4"
+                app:layout_constraintStart_toEndOf="@+id/tv_item_resto_total_v4"
+                app:layout_constraintTop_toTopOf="@+id/tv_item_resto_time_v4" />
+
+            <TextView
+                android:id="@+id/tv_item_resto_countdown_v4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_orange"
+                tools:text="@string/_00_45_23"
+                android:text="@{resto.close}"
+                android:textColor="@android:color/white"
+                android:layout_marginTop="@dimen/half_size"
+                android:layout_marginEnd="@dimen/half_size"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

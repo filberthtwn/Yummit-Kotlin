@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".fragment.main.home.MyOrderFragment">
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab_myorder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        app:tabTextAppearance="@style/AppTabTextAppearance"
+        app:tabIndicatorColor="@android:color/white"
+        app:tabMode="fixed" />
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/vp_myorder"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>

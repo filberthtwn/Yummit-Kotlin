@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayout_addMenu"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddMenuActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tv_nav_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_medium"
+            android:text="NEW MENU"
+            android:textColor="@android:color/white"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/btn_addMenu_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:background="@android:color/transparent"
+            android:tint="@android:color/white"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_nav_title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_nav_title"
+            app:srcCompat="@drawable/ic_left_chevron" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <EditText
+        android:id="@+id/et_addMenu_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        android:background="@android:drawable/editbox_background_normal"
+        android:backgroundTint="#FAFAFA"
+        android:ems="10"
+        android:hint="Enter Menu Name"
+        android:inputType="textPersonName"
+        android:padding="16sp"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_add_food_image" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/et_addMenu_name"
+        app:layout_constraintStart_toStartOf="@+id/et_addMenu_name"
+        app:layout_constraintTop_toBottomOf="@+id/et_addMenu_name">
+
+        <EditText
+            android:id="@+id/et_addMenu_price"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:background="@android:drawable/editbox_background_normal"
+            android:backgroundTint="#FAFAFA"
+            android:ems="10"
+            android:hint="@string/input_normal_price_string"
+            android:inputType="number|numberDecimal"
+            android:padding="16sp"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button2" />
+
+        <EditText
+            android:id="@+id/et_addMenu_stock"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_weight="1"
+            android:background="@android:drawable/editbox_background_normal"
+            android:backgroundTint="#FAFAFA"
+            android:ems="10"
+            android:hint="@string/stock_string"
+            android:inputType="textPersonName"
+            android:padding="16sp"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button2" />
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/et_addMenu_description"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@android:drawable/editbox_background_normal"
+        android:backgroundTint="#FAFAFA"
+        android:ems="10"
+        android:gravity="start|top"
+        android:hint="Description"
+        android:inputType="textMultiLine"
+        android:padding="16sp"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout3"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout3"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
+
+    <Button
+        android:id="@+id/btn_addMenu_add"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@color/colorPrimary"
+        android:fontFamily="@font/roboto"
+        android:text="Add Menu"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/et_addMenu_description"
+        app:layout_constraintStart_toStartOf="@+id/et_addMenu_description"
+        app:layout_constraintTop_toBottomOf="@+id/et_addMenu_description" />
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/iv_add_food_image"
+        android:layout_width="125dp"
+        android:layout_height="125dp"
+        android:layout_marginTop="24dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/img_default_food"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2"
+        app:riv_corner_radius="15dip"
+        app:riv_mutate_background="true" />
+
+    <ProgressBar
+        android:id="@+id/pb_add_menu"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_addMenu_description" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

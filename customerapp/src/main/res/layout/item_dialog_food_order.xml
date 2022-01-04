@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_marginTop="@dimen/half_size"
+    android:layout_marginBottom="@dimen/half_size"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/img_item_dialog_foodorder"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/bg_food_example_3"
+        android:scaleType="centerCrop"
+        android:contentDescription="@string/background"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@string/frame"
+        android:src="@drawable/frame"
+        app:layout_constraintBottom_toBottomOf="@id/img_item_dialog_foodorder"
+        app:layout_constraintEnd_toEndOf="@id/img_item_dialog_foodorder"
+        app:layout_constraintStart_toStartOf="@id/img_item_dialog_foodorder"
+        app:layout_constraintTop_toTopOf="@id/img_item_dialog_foodorder" />
+
+    <TextView
+        android:id="@+id/tv_item_dialog_foodorder_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/mini_dimsum"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/text_mediumsmall"
+        android:layout_marginStart="@dimen/half_size"
+        android:layout_marginTop="@dimen/half_size"
+        app:layout_constraintStart_toEndOf="@+id/img_item_dialog_foodorder"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_item_dialog_foodorder_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/rp_23_000"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/text_smaller"
+        android:layout_marginStart="@dimen/half_size"
+        android:layout_marginBottom="@dimen/half_size"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/img_item_dialog_foodorder" />
+
+    <TextView
+        android:id="@+id/tv_item_dialog_foodorder_amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/_1"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/text_mediumsmall"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_item_dialog_foodorder_name" />
+
+    <TextView
+        android:id="@+id/tv_item_dialog_foodorder_total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/rp_23_000"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/text_smaller"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_item_dialog_foodorder_price"
+        app:layout_constraintEnd_toEndOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

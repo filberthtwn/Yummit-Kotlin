@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="resto"
+            type="com.yummit.customer.model.Restaurant" />
+        <variable
+            name="listener"
+            type="com.yummit.customer.helper.RestoClickListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="@{listener::onRestoClick}"
+        android:layout_marginBottom="@dimen/half_size">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/restoId_restov2"
+            android:visibility="gone"
+            android:text="@{String.valueOf(resto.id)}" />
+
+        <ImageView
+            android:id="@+id/img_item_restov2"
+            android:layout_width="@dimen/bigger_image_size"
+            android:layout_height="@dimen/bigger_image_size"
+            android:contentDescription="@string/logo"
+            android:scaleType="fitCenter"
+            android:imageUrl="@{resto.image}"
+            tools:src="@drawable/bg_food_example"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:layout_width="@dimen/bigger_image_size"
+            android:layout_height="@dimen/bigger_image_size"
+            android:contentDescription="@string/frame"
+            android:src="@drawable/frame"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_item_resto_title_v2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/half_size"
+            tools:text="@string/kayana_cafe"
+            android:text="@{resto.name}"
+            android:textColor="@android:color/black"
+            app:layout_constraintEnd_toStartOf="@+id/img_item_like_restov2"
+            app:layout_constraintStart_toEndOf="@+id/img_item_restov2"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_item_resto_place_v2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/half_size"
+            android:text="@{resto.place}"
+            tools:text="@string/wiyung_gang_1"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/text_smaller"
+            app:layout_constraintEnd_toStartOf="@+id/img_item_like_restov2"
+            app:layout_constraintStart_toEndOf="@+id/img_item_restov2"
+            app:layout_constraintTop_toBottomOf="@+id/tv_item_resto_title_v2" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{resto.distance}"
+            tools:text="@string/_2_9_km"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/text_smaller"
+            android:textStyle="bold"
+            android:layout_marginStart="@dimen/half_size"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/img_item_restov2"
+            app:layout_constraintTop_toBottomOf="@+id/tv_item_resto_place_v2" />
+
+        <ImageView
+            android:contentDescription="@string/logo"
+            android:id="@+id/img_item_like_restov2"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_heart_outline"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_item_resto_time_v2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_orange"
+            android:text="@{resto.close}"
+            tools:text="@string/_00_45_23"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:textSize="@dimen/text_smaller"
+            android:paddingTop="@dimen/quarter_size"
+            android:paddingBottom="@dimen/quarter_size"
+            android:paddingStart="@dimen/default_size"
+            android:paddingEnd="@dimen/default_size"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

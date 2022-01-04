@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="image"
+            type="com.yummit.customer.model.Voucher" />
+        <variable
+            name="listener"
+            type="com.yummit.customer.helper.VoucherClickListener" />
+    </data>
+
+    <RelativeLayout
+        android:orientation="vertical"
+        android:layout_width="@dimen/voucher_width"
+        android:layout_height="@dimen/voucher_height"
+        android:padding="@dimen/half_size"
+        android:onClick="@{listener::onVoucherClick}">
+
+        <ImageView
+            android:id="@+id/img_item_voucher"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:contentDescription="@string/logo"
+            android:imageUrl="@{image.image}"
+            tools:src="@drawable/voucher_pickup" />
+
+        <ImageView
+            android:contentDescription="@string/frame"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/frame2" />
+    </RelativeLayout>
+</layout>

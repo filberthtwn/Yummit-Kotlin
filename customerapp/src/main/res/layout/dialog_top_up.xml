@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/double_size">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:src="@drawable/money"
+        android:contentDescription="@string/logo" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/top_up_amount"
+        android:textColor="@android:color/black"
+        android:textAlignment="center"
+        android:textSize="@dimen/text_large"
+        android:textStyle="bold"
+        android:layout_marginTop="@dimen/default_size" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/default_size">
+
+        <Button
+            android:id="@+id/btn_topup_5k"
+            style="@style/TopUpButtonStyle"
+            android:text="@string/rp_5_000"
+            android:layout_marginEnd="@dimen/quarter_size"/>
+
+        <Button
+            android:id="@+id/btn_topup_10k"
+            style="@style/TopUpButtonStyle"
+            android:text="@string/rp_10_000"
+            android:layout_marginEnd="@dimen/quarter_size"
+            android:layout_marginStart="@dimen/quarter_size"/>
+
+        <Button
+            android:id="@+id/btn_topup_15k"
+            style="@style/TopUpButtonStyle"
+            android:text="@string/rp_15_000"
+            android:layout_marginStart="@dimen/quarter_size"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/half_size">
+
+        <Button
+            android:id="@+id/btn_topup_20k"
+            style="@style/TopUpButtonStyle"
+            android:text="@string/rp_20_000"
+            android:layout_marginEnd="@dimen/quarter_size"/>
+
+        <Button
+            android:id="@+id/btn_topup_25k"
+            style="@style/TopUpButtonStyle"
+            android:text="@string/rp_25_000"
+            android:layout_marginEnd="@dimen/quarter_size"
+            android:layout_marginStart="@dimen/quarter_size"/>
+
+        <Button
+            android:id="@+id/btn_topup_50k"
+            style="@style/TopUpButtonStyle"
+            android:text="@string/rp_50_000"
+            android:layout_marginStart="@dimen/quarter_size"/>
+    </LinearLayout>
+</LinearLayout>

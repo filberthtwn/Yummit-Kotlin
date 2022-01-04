@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayout_register"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity">
+
+    <EditText
+        android:id="@+id/et_register_email"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:background="@android:drawable/editbox_background"
+        android:backgroundTint="#F5F5F5"
+        android:ems="10"
+        android:hint="@string/email_string"
+        android:inputType="textWebEmailAddress"
+        android:padding="16dp"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_register_name" />
+
+    <EditText
+        android:id="@+id/et_register_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        android:background="@android:drawable/editbox_background"
+        android:backgroundTint="#F5F5F5"
+        android:ems="10"
+        android:hint="@string/name_string"
+        android:inputType="textWebEmailAddress"
+        android:padding="16dp"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_restaurant_logo" />
+
+    <EditText
+        android:id="@+id/et_register_password"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@android:drawable/editbox_background"
+        android:backgroundTint="#F5F5F5"
+        android:ems="10"
+        android:hint="@string/passsword_string"
+        android:inputType="textPassword"
+        android:padding="16dp"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/et_register_email"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/et_register_email"
+        app:layout_constraintTop_toBottomOf="@+id/et_register_email" />
+
+    <EditText
+        android:id="@+id/et_register_confirmPassword"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@android:drawable/editbox_background"
+        android:backgroundTint="#F5F5F5"
+        android:ems="10"
+        android:hint="@string/confirmPassword_string"
+        android:inputType="textPassword"
+        android:padding="16dp"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/et_register_email"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/et_register_email"
+        app:layout_constraintTop_toBottomOf="@+id/et_register_password" />
+
+    <EditText
+        android:id="@+id/et_address"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:background="@android:drawable/editbox_background"
+        android:backgroundTint="#F5F5F5"
+        android:ems="10"
+        android:hint="Address"
+        android:inputType="text"
+        android:padding="16dp"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/et_register_email"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/et_register_email"
+        app:layout_constraintTop_toBottomOf="@+id/et_register_confirmPassword" />
+
+    <Button
+        android:id="@+id/btn_signup"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="24dp"
+        android:background="@color/colorPrimary"
+        android:fontFamily="@font/roboto_medium"
+        android:text="@string/signup_string"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/et_register_confirmPassword"
+        app:layout_constraintStart_toStartOf="@+id/et_register_confirmPassword"
+        app:layout_constraintTop_toBottomOf="@+id/et_address" />
+
+    <Button
+        android:id="@+id/btn_signInNow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:background="@android:color/transparent"
+        android:text="@string/already_have_an_account_string"
+        android:textColor="@color/colorPrimary"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/btn_signup"
+        app:layout_constraintStart_toStartOf="@+id/btn_signup" />
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/iv_restaurant_logo"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="24dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/img_default"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:riv_corner_radius="20dip"
+        app:riv_mutate_background="true"/>
+
+    <ProgressBar
+        android:id="@+id/pb_register"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_address" />
+</androidx.constraintlayout.widget.ConstraintLayout>

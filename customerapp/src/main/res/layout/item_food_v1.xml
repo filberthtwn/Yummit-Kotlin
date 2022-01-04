@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="food"
+            type="com.yummit.customer.model.Food" />
+        <variable
+            name="listener"
+            type="com.yummit.customer.helper.FoodClickListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/half_size"
+        android:background="@android:color/white"
+        android:padding="@dimen/half_size"
+        android:onClick="@{listener::onFoodClick}">
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout"
+            android:layout_width="170dp"
+            android:layout_height="170dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/img_item_foodv1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/logo"
+                android:scaleType="centerCrop"
+                android:imageUrl="@{food.image}"
+                tools:src="@drawable/bg_food_example_2" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/frame"
+                android:src="@drawable/frame" />
+
+            <TextView
+                android:id="@+id/tv_item_countdown_v1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{food.endTime}"
+                tools:text="@string/_00_45_23"
+                android:textColor="@android:color/white"
+                android:background="@drawable/btn_orange"
+                android:textSize="@dimen/text_small"
+                android:layout_marginTop="@dimen/quarter_size"
+                android:layout_marginStart="@dimen/quarter_size"
+                android:visibility="invisible"/>
+
+            <ImageView
+                android:id="@+id/img_item_new_v1"
+                android:contentDescription="@string/logo"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:src="@drawable/ic_circle"
+                android:background="@drawable/alert_new"
+                android:padding="@dimen/quarter_size"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="@dimen/quarter_size"
+                android:layout_marginEnd="@dimen/quarter_size"
+                android:visibility="invisible"/>
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_item_food_title_v1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{food.name}"
+            tools:text="@string/mini_dimsum"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/text_mediumsmall"
+            app:layout_constraintEnd_toStartOf="@+id/img_item_food_like_v1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
+
+        <TextView
+            android:id="@+id/tv_item_food_price_v1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{food.price}"
+            tools:text="@string/rp_23_000"
+            android:textSize="@dimen/text_smaller"
+            android:textColor="@android:color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_item_food_title_v1" />
+
+        <TextView
+            android:id="@+id/tv_item_food_pricefrom_v1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{food.pricefrom}"
+            tools:text="@string/rp_46_000"
+            android:textSize="@dimen/text_smaller"
+            android:layout_marginStart="@dimen/half_size"
+            android:visibility="invisible"
+            app:layout_constraintStart_toEndOf="@+id/tv_item_food_price_v1"
+            app:layout_constraintTop_toBottomOf="@+id/tv_item_food_title_v1" />
+
+        <ImageView
+            android:id="@+id/img_item_food_like_v1"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:contentDescription="@string/logo"
+            android:src="@drawable/ic_heart_outline"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

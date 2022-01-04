@@ -1,0 +1,73 @@
+<resources>
+    <string name="app_name">OwnerApp</string>
+    <string name="title_activity_home_activity">home_activity</string>
+    <string name="orders">Orders</string>
+    <string name="menu">Menu</string>
+    <string name="offers">Offers</string>
+    <string name="account">Account</string>
+
+    <string name="fa_angle_left"></string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="order_total_item">0 Items</string>
+    <string name="order_type">Delivery</string>
+    <string name="order_total_price">Rp.0</string>
+    <string name="order_buyerName">No Name</string>
+    <string name="order_type_icon" />
+    <string name="restaurant_name">No Name Cafe</string>
+    <string name="new_menu_button_string">New Menu</string>
+    <string name="order_new_string">NEW</string>
+    <string name="order_on_progress_string">ON PROGRESS</string>
+    <string name="order_past_string">PAST</string>
+    <string name="orders_order_id">Order #0000</string>
+    <string name="orders_detail_total_price">Total : Rp 0</string>
+    <string name="order_timestamp_string">Today at 13.30</string>
+    <string name="orders_phone_title_string">PHONE</string>
+    <string name="orders_phone_string">0000000000</string>
+    <string name="orders_call_button_string">CALL</string>
+    <string name="orders_pickup_time_title_string">PICK-UP TIME</string>
+    <string name="pickup_time_string">00:00 PM</string>
+    <string name="orders_food_name_string">Food Name</string>
+    <string name="orders_food_amount_string">1</string>
+    <string name="orders_food_price_string">Rp 0</string>
+    <string name="orders_notes_title_string">NOTES</string>
+    <string name="orders_note_string">Lorem Ipsum</string>
+    <string name="accept_string">ACCEPT</string>
+    <string name="reject_string">REJECT</string>
+    <string name="back_string">Back</string>
+    <string name="navigate_string">NAVIGATE</string>
+    <string name="address_title_string">ADDRESS</string>
+    <string name="nil_string">nil</string>
+    <string name="email_string">Email</string>
+    <string name="passsword_string">Password</string>
+    <string name="forgot_password_string">Forgot Password?</string>
+    <string name="make_order_string">MAKE ORDER</string>
+    <string name="already_have_an_account_string">Already Have An Account? Log In</string>
+    <string name="login_caps_string">LOGIN</string>
+    <string name="new_menu_string">New Menu</string>
+    <string name="stock_string">Stock</string>
+    <string name="input_normal_price_string">Enter Normal Price</string>
+    <string name="dont_have_an_account_string">Don\'t Have An Account? Sign Up Now</string>
+    <string name="confirmPassword_string">Confirm Password</string>
+    <string name="name_string">Name</string>
+    <string name="signup_string">SIGN UP</string>
+    <string name="edit_string">Edit</string>
+    <string name="offers_string">Offers</string>
+    <string name="add_offers_string">ADD OFFERS</string>
+    <string name="no_offer_yet_string">No Offer Yet</string>
+    <string name="termsContion">Terms &amp; Condition</string>
+
+    <!--  Order Status  -->
+    <string name="newOrder">new</string>
+    <string name="onProgress">on_progress</string>
+    <string name="done">done</string>
+    <string name="reject">reject</string>
+
+    <!--  Offer Menu Status  -->
+    <string name="plus">+</string>
+    <string name="minus">-</string>
+
+
+    <string name="finishOrder">FINISH ORDER</string>
+</resources>

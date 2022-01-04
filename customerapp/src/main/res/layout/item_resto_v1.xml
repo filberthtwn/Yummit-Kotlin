@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="resto"
+            type="com.yummit.customer.model.Restaurant" />
+        <variable
+            name="listener"
+            type="com.yummit.customer.helper.RestoClickListener" />
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/half_size"
+        android:layout_marginTop="@dimen/half_size"
+        android:onClick="@{listener::onRestoClick}">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/restoId_restov1"
+            android:visibility="gone"
+            android:text="@{String.valueOf(resto.id)}" />
+
+        <RelativeLayout
+            android:layout_width="140dp"
+            android:layout_height="140dp">
+
+            <ImageView
+                android:id="@+id/img_item_restov1"
+                android:contentDescription="@string/logo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:imageUrl="@{resto.image}"
+                tools:src="@drawable/bg_food_example"
+                android:scaleType="fitCenter" />
+
+            <ImageView
+                android:contentDescription="@string/frame"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/frame" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_item_resto_title_v1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{resto.name}"
+            tools:text="@string/kayana_cafe"
+            android:textSize="@dimen/text_mediumsmall"
+            android:textColor="@android:color/black"
+            android:layout_marginTop="@dimen/half_size"/>
+
+        <TextView
+            android:id="@+id/tv_item_resto_subtitle_v1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{resto.distance}"
+            tools:text="@string/_2_9_km"
+            android:textSize="@dimen/text_smaller"
+            android:layout_marginTop="@dimen/quarter_size" />
+    </LinearLayout>
+</layout>

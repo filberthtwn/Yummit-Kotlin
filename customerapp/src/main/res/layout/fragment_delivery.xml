@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".fragment.main.DeliveryFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@android:color/white"
+            style="@style/ActionBarLight">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/tb_fragment_delivery"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/delivery"
+                    android:textSize="18sp"
+                    android:textColor="@android:color/black"
+                    android:gravity="center_vertical" />
+            </androidx.appcompat.widget.Toolbar>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/default_size"
+            android:paddingStart="@dimen/double_size"
+            android:paddingEnd="@dimen/double_size"
+            android:paddingBottom="@dimen/default_size">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/search_home"
+                android:drawableStart="@drawable/ic_search"
+                android:drawablePadding="@dimen/quarter_size"
+                android:padding="@dimen/half_size"
+                android:text="@string/what_would"
+                android:layout_marginBottom="@dimen/default_size"/>
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_delivery_voucher"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        tools:listitem="@layout/item_voucher"
+                        tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        tools:itemCount="2"
+                        tools:orientation="horizontal"/>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:paddingTop="@dimen/default_size"
+                        android:id="@+id/rv_delivery_categories"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        tools:listitem="@layout/item_categories"
+                        tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        tools:itemCount="3"
+                        tools:orientation="horizontal"/>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/default_size">
+
+                        <TextView
+                            android:id="@+id/textView1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/closing_hours_deals"
+                            android:textColor="@android:color/black"
+                            android:textSize="@dimen/text_medium"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toStartOf="@+id/tv_delivery_closing_viewall"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tv_delivery_closing_viewall"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/view_all"
+                            android:textColor="@color/colorPrimary"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rv_delivery_closing"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/default_size"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/textView1"
+                            tools:listitem="@layout/item_food_v1"
+                            tools:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                            tools:spanCount="2"
+                            tools:itemCount="4"/>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/default_size">
+
+                        <TextView
+                            android:id="@+id/textView3"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/fast_and_hungrious"
+                            android:textColor="@android:color/black"
+                            android:textSize="@dimen/text_medium"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toStartOf="@+id/tv_delivery_fast_seeall"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/textView5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/quarter_size"
+                            android:text="@string/_30_minutes_delivery"
+                            android:textSize="@dimen/text_smaller"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+                        <TextView
+                            android:id="@+id/tv_delivery_fast_seeall"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/see_all"
+                            android:textColor="@color/colorPrimary"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rv_delivery_fast_hungrious"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="@dimen/default_size"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/textView5"
+                            tools:listitem="@layout/item_resto_v4"
+                            tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            tools:itemCount="3"/>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+    </LinearLayout>
+</layout>

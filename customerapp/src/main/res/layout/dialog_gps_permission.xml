@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_white"
+    android:gravity="center"
+    android:padding="@dimen/double_size">
+
+    <ImageView
+        android:contentDescription="@string/logo"
+        android:layout_width="@dimen/double_image_size"
+        android:layout_height="@dimen/double_image_size"
+        android:src="@drawable/ic_map" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/gps_for_food"
+        android:textAlignment="center"
+        android:textSize="@dimen/text_large"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        android:layout_marginTop="@dimen/default_size" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/we_need_permissions"
+        android:textAlignment="center"
+        android:textSize="@dimen/text_mediumsmall"
+        android:layout_marginTop="@dimen/half_size" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/default_size">
+
+        <Button
+            android:id="@+id/btn_gps_cancel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/quarter_size"
+            android:layout_weight="0.5"
+            android:background="@drawable/btn_purple_outline"
+            android:text="@string/cancel"
+            android:textColor="@color/colorTertiary"
+            style="?android:attr/buttonBarButtonStyle"/>
+
+        <Button
+            android:id="@+id/btn_gps_turnon"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/quarter_size"
+            android:layout_weight="0.5"
+            android:background="@drawable/btn_purple"
+            android:text="@string/turn_on"
+            android:textColor="@android:color/white"
+            style="?android:attr/buttonBarButtonStyle"/>
+    </LinearLayout>
+</LinearLayout>

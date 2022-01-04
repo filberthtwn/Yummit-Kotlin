@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="name"
+            type="String" />
+        <variable
+            name="picture"
+            type="Integer" />
+        <variable
+            name="total"
+            type="String" />
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/default_size"
+        android:layout_marginEnd="@dimen/default_size">
+
+        <ImageView
+            android:id="@+id/img_item_categories"
+            android:contentDescription="@string/logo"
+            android:layout_width="88dp"
+            android:layout_height="88dp"
+            android:background="@drawable/frame_categories"
+            android:imageUrl="@{picture.toString()}"
+            tools:src="@drawable/ic_pizza"
+            android:padding="@dimen/default_size" />
+
+        <TextView
+            android:id="@+id/tv_item_categories_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{name}"
+            tools:text="@string/pizza"
+            android:textSize="@dimen/text_mediumsmall"
+            android:textColor="@android:color/black"
+            android:layout_marginTop="@dimen/half_size"/>
+
+        <TextView
+            android:id="@+id/tv_item_categories_count"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{total}"
+            tools:text="@string/_2_9_km"
+            android:textSize="@dimen/text_smaller"
+            android:layout_marginTop="@dimen/quarter_size" />
+
+    </LinearLayout>
+</layout>

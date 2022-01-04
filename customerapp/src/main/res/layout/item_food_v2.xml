@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="food"
+            type="com.yummit.customer.model.Food" />
+        <variable
+            name="clickListener"
+            type="com.yummit.customer.helper.FoodClickListener" />
+        <variable
+            name="addRemove"
+            type="com.yummit.customer.helper.AddRemoveFoodClickListener" />
+        <variable
+            name="favorite"
+            type="com.yummit.customer.helper.FavoriteFoodClickListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:layout_marginBottom="@dimen/half_size"
+        android:onClick="@{clickListener.onFoodClick}"
+        android:padding="@dimen/half_size">
+
+        <TextView
+            android:id="@+id/foodId_foodv2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@{food.id}"
+            android:visibility="gone"/>
+
+        <ImageView
+            android:id="@+id/img_item_foodv2"
+            android:layout_width="85dp"
+            android:layout_height="85dp"
+            android:scaleType="centerCrop"
+            tools:src="@drawable/bg_food_example_3"
+            android:imageUrl="@{food.image}"
+            android:contentDescription="@string/background"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="85dp"
+            android:layout_height="85dp"
+            android:contentDescription="@string/frame"
+            android:src="@drawable/frame"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_item_food_name_v2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/half_size"
+            tools:text="@string/aglio_o_lio"
+            android:text="@{food.name}"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/text_large"
+            app:layout_constraintEnd_toStartOf="@+id/img_item_food_like_v2"
+            app:layout_constraintStart_toEndOf="@+id/img_item_foodv2"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_item_food_desc_v2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/half_size"
+            tools:text="@string/cheesy_mayo"
+            android:text="@{food.desc}"
+            android:textSize="@dimen/text_smaller"
+            app:layout_constraintEnd_toStartOf="@+id/img_item_food_like_v2"
+            app:layout_constraintStart_toEndOf="@+id/img_item_foodv2"
+            app:layout_constraintTop_toBottomOf="@+id/tv_item_food_name_v2" />
+
+        <TextView
+            android:id="@+id/tv_item_food_price_v2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="@string/rp_23_000"
+            android:text="@{food.price}"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/text_smaller"
+            android:layout_marginStart="@dimen/half_size"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/img_item_foodv2"
+            app:layout_constraintTop_toBottomOf="@+id/tv_item_food_desc_v2" />
+
+        <TextView
+            android:id="@+id/tv_item_food_pricefrom_v2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{food.pricefrom}"
+            tools:text="@string/rp_46_000"
+            android:textSize="@dimen/text_smaller"
+            android:layout_marginStart="@dimen/half_size"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tv_item_food_price_v2"
+            app:layout_constraintTop_toBottomOf="@+id/tv_item_food_desc_v2" />
+
+        <ImageView
+            android:id="@+id/img_item_food_like_v2"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_heart_outline"
+            android:contentDescription="@string/logo"
+            android:onClick="@{favorite.onFavorite}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/btn_item_food_add_v2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/add"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/text_small"
+            android:background="@drawable/btn_orange_outline"
+            android:onClick="@{addRemove.onAddRemove}"
+            android:paddingTop="@dimen/quarter_size"
+            android:paddingBottom="@dimen/quarter_size"
+            android:paddingStart="@dimen/default_size"
+            android:paddingEnd="@dimen/default_size"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

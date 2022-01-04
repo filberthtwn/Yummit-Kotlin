@@ -1,0 +1,3 @@
+//include ':customerapp', ':ownerapp'
+include ':customerapp'
+rootProject.name='YummitApps'

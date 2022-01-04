@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="resto"
+            type="com.yummit.customer.model.Restaurant" />
+        <variable
+            name="listener"
+            type="com.yummit.customer.helper.RestoClickListener" />
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/default_size"
+        android:paddingEnd="@dimen/default_size"
+        android:paddingStart="0dp"
+        android:paddingBottom="@dimen/default_size"
+        android:onClick="@{listener::onRestoClick}">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/restoId_restov3"
+            android:visibility="gone"
+            android:text="@{String.valueOf(resto.id)}" />
+
+        <RelativeLayout
+            android:layout_width="@dimen/triple_image_size"
+            android:layout_height="@dimen/triple_image_size">
+
+            <ImageView
+                android:id="@+id/img_item_restov3"
+                android:contentDescription="@string/logo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:src="@drawable/bg_food_example"
+                android:imageUrl="@{resto.image}"
+                android:scaleType="centerCrop" />
+
+            <ImageView
+                android:contentDescription="@string/frame"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/frame" />
+
+            <TextView
+                android:id="@+id/tv_item_countdown_v3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{resto.close}"
+                tools:text="@string/_00_45_23"
+                android:textColor="@android:color/white"
+                android:background="@drawable/btn_orange"
+                android:textSize="@dimen/text_small"
+                android:layout_marginTop="@dimen/quarter_size"
+                android:layout_marginStart="@dimen/quarter_size" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_item_resto_title_v3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="@string/kayana_cafe"
+            android:text="@{resto.name}"
+            android:textSize="@dimen/text_mediumsmall"
+            android:textColor="@android:color/black"
+            android:layout_marginTop="@dimen/half_size"/>
+
+        <TextView
+            android:id="@+id/tv_item_resto_type_v3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="@string/italian_cuisine"
+            android:text="@{resto.type}"
+            android:textSize="@dimen/text_smaller"
+            android:layout_marginTop="@dimen/super_small_size"/>
+
+        <TextView
+            android:id="@+id/tv_item_resto_distance_v3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="@string/_2_9_km"
+            android:text="@{resto.distance}"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/text_smaller"
+            android:layout_marginTop="@dimen/super_small_size" />
+
+    </LinearLayout>
+</layout>

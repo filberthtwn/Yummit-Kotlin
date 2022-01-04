@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorPrimary"
+    android:padding="@dimen/default_size"
+    tools:context=".OnboardingActivity">
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/vp_onboarding"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="@dimen/triple_size">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="Gilroy"
+            android:text="@string/yumm"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/text_giant"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="Gilroy"
+            android:text="@string/it"
+            android:textColor="@color/colorSecondary"
+            android:textSize="@dimen/text_giant"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/dots_onboarding"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:layout_marginBottom="@dimen/double_size"
+        app:layout_constraintBottom_toTopOf="@+id/ll_btn_onboarding"
+        app:layout_constraintEnd_toEndOf="@+id/vp_onboarding"
+        app:layout_constraintStart_toStartOf="@+id/vp_onboarding" />
+
+    <LinearLayout
+        android:id="@+id/ll_btn_onboarding"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@+id/vp_onboarding"
+        tools:layout_editor_absoluteX="16dp">
+
+        <Button
+            android:id="@+id/btn_onboarding_signup"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/quarter_size"
+            android:layout_weight="0.5"
+            android:background="@drawable/btn_outline_white"
+            android:text="@string/sign_up"
+            android:textColor="@android:color/white"
+            style="?android:attr/buttonBarButtonStyle"/>
+
+        <Button
+            android:id="@+id/btn_onboarding_login"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/quarter_size"
+            android:layout_weight="0.5"
+            android:background="@drawable/btn_white"
+            android:text="@string/log_in"
+            android:textColor="@color/colorPrimary"
+            style="?android:attr/buttonBarButtonStyle"/>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

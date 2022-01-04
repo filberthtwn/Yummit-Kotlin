@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home_navigation"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.yummit.customer.fragment.main.HomeFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_home_pickup"
+            app:destination="@id/pickUpFragment" />
+        <action
+            android:id="@+id/action_home_delivery"
+            app:destination="@id/deliveryFragment" />
+        <action
+            android:id="@+id/action_home_aboutus"
+            app:destination="@id/aboutUsFragment" />
+        <action
+            android:id="@+id/action_home_topuppayment"
+            app:destination="@id/topUpPaymentFragment" />
+        <action
+            android:id="@+id/action_home_changeprofile"
+            app:destination="@id/changeProfileFragment" />
+        <action
+            android:id="@+id/action_home_resto"
+            app:destination="@id/restoFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/pickUpFragment"
+        android:name="com.yummit.customer.fragment.main.PickUpFragment"
+        android:label="PickUpFragment"
+        tools:layout="@layout/fragment_pick_up">
+        <action
+            android:id="@+id/action_pickup_resto"
+            app:destination="@id/restoFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/deliveryFragment"
+        android:name="com.yummit.customer.fragment.main.DeliveryFragment"
+        android:label="DeliveryFragment"
+        tools:layout="@layout/fragment_delivery">
+        <action
+            android:id="@+id/action_delivery_resto"
+            app:destination="@id/restoFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/restoFragment"
+        android:name="com.yummit.customer.fragment.main.RestoFragment"
+        android:label="RestoFragment"
+        tools:layout="@layout/fragment_resto">
+        <argument
+            android:name="order_type"
+            android:defaultValue="failed"
+            app:argType="string" />
+        <argument
+            android:name="restoId"
+            android:defaultValue="0"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_resto_checkout"
+            app:destination="@id/checkoutFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/checkoutFragment"
+        android:name="com.yummit.customer.fragment.main.CheckoutFragment"
+        android:label="fragment_checkout"
+        tools:layout="@layout/fragment_checkout" >
+        <argument
+            android:name="order_type"
+            app:nullable="true"
+            app:argType="string" />
+        <argument
+            android:name="resto"
+            app:nullable="true"
+            app:argType="com.yummit.customer.model.Restaurant" />
+        <action
+            android:id="@+id/action_checkout_home"
+            app:destination="@id/homeFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/aboutUsFragment"
+        android:name="com.yummit.customer.fragment.main.account.AboutUsFragment"
+        android:label="AboutUsFragment"
+        tools:layout="@layout/fragment_about_us"/>
+
+    <fragment
+        android:id="@+id/topUpPaymentFragment"
+        android:name="com.yummit.customer.fragment.main.account.TopUpPaymentFragment"
+        android:label="TopUpPaymentFragment"
+        tools:layout="@layout/fragment_top_up_payment"/>
+
+    <fragment
+        android:id="@+id/changeProfileFragment"
+        android:name="com.yummit.customer.fragment.main.account.ChangeProfileFragment"
+        android:label="ChangeProfileFragment"
+        tools:layout="@layout/fragment_change_profile"/>
+</navigation>

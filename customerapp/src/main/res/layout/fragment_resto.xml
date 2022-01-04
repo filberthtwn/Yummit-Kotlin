@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#f7f7f7"
+        tools:context=".fragment.main.RestoFragment">
+
+        <include
+            android:id="@+id/include_resto"
+            layout="@layout/content_fragment_restaurant" />
+
+        <LinearLayout
+            android:id="@+id/ll_resto_cart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/double_size"
+            android:background="@drawable/floating_orange"
+            android:orientation="horizontal"
+            android:padding="@dimen/default_size"
+            app:layout_constraintBottom_toBottomOf="@+id/include_resto"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:id="@+id/tv_cart_total_item"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/_2_items"
+                android:textColor="@android:color/white"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/separator"
+                android:layout_marginStart="@dimen/half_size"
+                android:layout_marginEnd="@dimen/half_size"
+                android:textColor="@android:color/white"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:id="@+id/tv_cart_total_price"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/rp_23_000"
+                android:textColor="@android:color/white"
+                android:layout_gravity="center"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/checkout"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                android:layout_marginEnd="@dimen/half_size" />
+
+            <ImageView
+                android:contentDescription="@string/logo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_shopping_cart" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FF4500</color>
+    <color name="colorPrimaryTrans">#37FF4500</color>
+    <color name="colorSecondary">#ADFF2F</color>
+    <color name="colorSecondaryDark">#9BE52A</color>
+    <color name="colorSecondaryDarker">#42A112</color>
+    <color name="colorLight">#FFFACD</color>
+    <color name="colorTertiary">#6C63FF</color>
+    <color name="colorQuaternary">#FAE100</color>
+    <color name="searchTextFieldBackground">#37FFFFFF</color>
+
+    <color name="facebook">#385084</color>
+
+    <color name="inputNormal">#FBFAFF</color>
+    <color name="inputPrimary">#2F99FF</color>
+    <color name="inputDanger">#FF4500</color>
+
+    <color name="shimmerBackround">#dddddd</color>
+
+    <color name="colorGreyBackground">#F4F4F4</color>
+    <color name="colorPurple">#6C63FF</color>
+</resources>

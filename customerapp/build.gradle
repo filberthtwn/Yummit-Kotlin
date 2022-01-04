@@ -1,0 +1,109 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+apply plugin: 'com.google.gms.google-services'
+
+apply plugin: 'kotlin-kapt'
+
+apply plugin: 'androidx.navigation.safeargs'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.2"
+    defaultConfig {
+        applicationId "com.yummit.customer"
+        minSdkVersion 22
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        buildConfigField "String", "BASE_URL", '"https://yummit.aurigaaristo.com/api"'
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    androidExtensions {
+        experimental = true
+    }
+    dataBinding.enabled = true
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion"
+    implementation "androidx.appcompat:appcompat:$appCompatVersion"
+    implementation "androidx.core:core-ktx:$ktx"
+    implementation "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion"
+
+    //material
+    implementation "com.google.android.material:material:$materialVersion"
+
+    //design support
+    implementation "com.android.support:design:$supportVersion"
+
+    //picture support
+    implementation "com.github.bumptech.glide:glide:$glideVersion"
+    implementation 'de.hdodenhof:circleimageview:3.0.1'
+
+    //retrofit
+    implementation "com.squareup.retrofit2:retrofit:$retrofit"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofit"
+
+    //gson
+    implementation 'com.google.code.gson:gson:2.8.5'
+
+    //android networking
+    implementation 'com.amitshekhar.android:android-networking:1.0.2'
+
+    //rxjava
+    implementation "io.reactivex.rxjava2:rxjava:$rxJavaVersion"
+    implementation "io.reactivex.rxjava2:rxandroid:$rxJavaVersion"
+
+    //room
+    implementation "androidx.room:room-runtime:$roomVersion"
+    implementation "androidx.legacy:legacy-support-v4:1.0.0"
+    kapt "androidx.room:room-compiler:$roomVersion"
+    implementation "androidx.room:room-ktx:$roomVersion"
+
+    //lifecycle
+    implementation "android.arch.lifecycle:extensions:$lifecycleExtensionVersion"
+
+    //dexter for permissions
+    implementation 'com.karumi:dexter:6.0.1'
+
+    //firebase support
+    implementation 'com.google.firebase:firebase-firestore:21.4.0'
+    implementation 'com.google.firebase:firebase-analytics:17.2.2'
+
+    //preferences
+    implementation "androidx.preference:preference:$preferencesVersion"
+
+    //navigation
+    implementation "androidx.navigation:navigation-fragment-ktx:$navigationVersion"
+    implementation "androidx.navigation:navigation-ui-ktx:$navigationVersion"
+
+    //shimmer effect
+    implementation 'com.facebook.shimmer:shimmer:0.1.0@aar'
+
+//    implementation 'com.facebook.android:facebook-login:5.9.0'
+    implementation 'com.facebook.android:facebook-android-sdk:4.0.1'
+
+    implementation "com.android.support:multidex:1.0.3"
+
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+}

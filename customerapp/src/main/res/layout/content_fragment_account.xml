@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F2F2F2"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/default_size"
+        android:paddingStart="@dimen/double_size"
+        android:paddingEnd="@dimen/double_size"
+        android:paddingBottom="@dimen/default_size"
+        android:background="?android:attr/windowBackground">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/img_account"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:src="@drawable/ic_account"
+            android:scaleType="centerCrop"
+            android:contentDescription="@string/background"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_account_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/default_size"
+            android:layout_marginTop="12dp"
+            android:text="@string/john_doe"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/text_mediumsmall"
+            app:layout_constraintEnd_toStartOf="@+id/img_account_edit"
+            app:layout_constraintStart_toEndOf="@+id/img_account"
+            app:layout_constraintTop_toTopOf="@+id/img_account" />
+
+        <TextView
+            android:id="@+id/tv_account_email"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/johndoe_gmail_com"
+            android:textSize="@dimen/text_mediumsmall"
+            app:layout_constraintEnd_toStartOf="@+id/img_account_edit"
+            app:layout_constraintStart_toStartOf="@+id/tv_account_name"
+            app:layout_constraintTop_toBottomOf="@+id/tv_account_name" />
+
+        <ImageView
+            android:contentDescription="@string/logo"
+            android:id="@+id/img_account_edit"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/floating_orange"
+            android:src="@drawable/ic_edit"
+            android:padding="@dimen/quarter_size"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        style="@style/SettingsStyle"
+        android:background="@android:color/white">
+
+        <ImageView
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:scaleType="centerInside"
+            android:contentDescription="@string/logo"
+            android:src="@drawable/ic_medal" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/loyalty_points"
+            android:layout_marginStart="@dimen/half_size" />
+
+        <TextView
+            android:id="@+id/tv_account_loyalty_points"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/_200"
+            android:textColor="@android:color/black"
+            android:layout_weight="1"
+            android:layout_marginStart="@dimen/half_size"
+            android:textSize="@dimen/text_medium" />
+
+        <ImageView
+            android:id="@+id/tv_account_loyalty_next"
+            android:contentDescription="@string/logo"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_next" />
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/SettingsStyle"
+        android:layout_marginTop="@dimen/default_size"
+        android:layout_marginBottom="@dimen/default_size"
+        android:background="@color/colorPrimary">
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/yumm_pay"
+            android:textColor="#67FFFFFF"
+            android:textSize="@dimen/text_small"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_account_money"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/rp_56_000"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/text_small"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+        <Button
+            android:id="@+id/btn_account_money_topup"
+            android:layout_width="70dp"
+            android:layout_height="30dp"
+            android:background="#14000000"
+            android:text="@string/top__up"
+            android:textSize="@dimen/text_smaller"
+            android:textColor="@android:color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_account_rewards"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        style="@style/SettingsStyle"
+        android:background="@android:color/white">
+
+        <ImageView
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:scaleType="fitCenter"
+            android:contentDescription="@string/logo"
+            android:src="@drawable/ic_coupon" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/rewards_promo"
+            android:layout_marginStart="@dimen/half_size" />
+
+        <ImageView
+            android:contentDescription="@string/logo"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_next" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_account_language"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/super_small_size"
+        style="@style/SettingsStyle"
+        android:background="@android:color/white">
+
+        <ImageView
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:scaleType="fitCenter"
+            android:contentDescription="@string/logo"
+            android:src="@drawable/ic_language" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/language"
+            android:layout_marginStart="@dimen/half_size" />
+
+        <ImageView
+            android:contentDescription="@string/logo"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_next" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_account_help"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/super_small_size"
+        style="@style/SettingsStyle"
+        android:background="@android:color/white">
+
+        <ImageView
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:scaleType="fitCenter"
+            android:contentDescription="@string/logo"
+            android:src="@drawable/ic_help" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/help"
+            android:layout_marginStart="@dimen/half_size" />
+
+        <ImageView
+            android:contentDescription="@string/logo"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_next" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_account_about"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/super_small_size"
+        style="@style/SettingsStyle"
+        android:background="@android:color/white">
+
+        <ImageView
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:scaleType="fitCenter"
+            android:contentDescription="@string/logo"
+            android:src="@drawable/ic_info" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/about"
+            android:layout_marginStart="@dimen/half_size" />
+
+        <ImageView
+            android:contentDescription="@string/logo"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_next" />
+    </LinearLayout>
+</LinearLayout>
